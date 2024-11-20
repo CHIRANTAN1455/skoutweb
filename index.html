@@ -16,8 +16,8 @@
     <style>
         body {
             margin: 0;
-            font-family: "Georgia", serif; /* Closest approximation to the font in the design */
-            background-color: #fefaf3; /* Background color */
+            font-family: "Georgia", serif;
+            background-color: #fefaf3;
             color: #222;
             display: flex;
             justify-content: center;
@@ -32,6 +32,7 @@
             gap: 2rem;
             max-width: 1200px;
             padding: 20px;
+            flex-wrap: wrap;
         }
 
         .content {
@@ -54,6 +55,7 @@
         .buttons {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .buttons a {
@@ -78,63 +80,204 @@
         .image-container {
             flex: 1;
             position: relative;
+            max-width: 100%;
+            width: 100%;
+            height: auto;
         }
 
         .image-container img {
             max-width: 100%;
+            height: auto;
             border-radius: 10px;
         }
 
         .popup {
             position: absolute;
-            bottom: -20px;
-            left: 20px;
+            bottom: -5%;
+            left: 5%;
             background-color: #804bd0;
             color: white;
-            border-radius: 10px;
-            padding: 1rem;
-            max-width: 300px;
+            border-radius: 10px 10px 0 0;
+            padding: 2%;
+            width: 25%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: clamp(0.8rem, 1vw, 1rem);
+            border: 2px solid #222;
+            overflow: hidden;
+        }
+
+        .popup::before {
+            content: '';
+            display: block;
+            height: 20px;
+            background-color: #333;
+            border-radius: 10px 10px 0 0;
+            margin: -2% -2% 0 -2%;
         }
 
         .popup h3 {
-            font-size: 1rem;
-            margin: 0 0 0.5rem;
+            font-size: 1em;
+            margin: 0 0 0.5em;
         }
 
         .popup p {
-            margin: 0.3rem 0;
-            font-size: 0.9rem;
+            margin: 0.3em 0;
+            font-size: 0.9em;
         }
 
         .popup span {
             display: block;
-            margin-top: 1rem;
-            font-size: 0.8rem;
+            margin-top: 1em;
+            font-size: 0.8em;
             opacity: 0.8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+
+            .buttons a {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .popup {
+                width: 90%;
+                bottom: 5%;
+                padding: 3%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .content p {
+                font-size: 0.9rem;
+            }
+
+            .buttons a {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .image-container {
+                width: 100%;
+            }
+
+            .popup {
+                width: 95%;
+                bottom: 2%;
+                padding: 4%;
+                font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+            }
+        }
+
+        
+        .ask.skout {
+            margin-top: 2rem;
+            background-color: #121212;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .ask.skout input {
+            width: 100%;
+            padding: 15px 50px 15px 15px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .ask.skout button {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .ask.skout button span {
+            font-size: 18px;
+            color: gray;
+        }
+
+        @media (max-width: 414px) {
+            .image-container {
+                width: 100%; 
+            }
+
+            .popup {
+                width: 90%; 
+                bottom: 5%; 
+                padding: 3%; 
+                font-size: clamp(0.8rem, 2vw, 1rem); 
+            }
+        }
+
+        @media (max-width: 375px) { 
+            .popup {
+                width: 95%;
+                bottom: 2%;
+                padding: 4%; 
+                font-size: clamp(0.7rem, 2.5vw, 0.9rem); 
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Left Side Content -->
+       
         <div class="content">
-            <h1>🛠️skout.</h1>
+            <h1>🛠️skout.  偵察兵.</h1>
             <h1>AI-First Audits.<br>Catered to humans.</h1>
             <p>
                 We are your one stop for all your tech code audits, 
                 personalised experiences using AI trained in the art of technologies.
             </p>
-            <h2>🚧 WIP</h2>
-            <!-- <div class="buttons">
-                <a href="#" class="btn-primary">Start your free trial</a>
-                <a href="#" class="btn-secondary">View demo</a>
-            </div> -->
+            <h2>🚧 Work In Progress</h2>
+            <div class="ask.skout">
+                <h2 style="font-size: 40px; margin-bottom: 20px;">Ask skout AI </h2>
+                <div style="position: relative; display: inline-block; width: 400px;">
+                    <input 
+                        type="text" 
+                        placeholder="APIを保護するにはどうすればよいですか"
+                    >
+                    <button>
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+           
         </div>
+        
 
-        <!-- Right Side Image -->
+        
         <div class="image-container">
-            <img src="https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-13391.jpg" alt="Smiling person">
+            <img src="https://github.com/CHIRANTAN1455/skoutweb/blob/main/skout_image.png?raw=true" alt="startup"></img>
             <div class="popup">
                 <h3>Order #201988</h3>
                 <p>🚀 Processing exchange</p>
@@ -143,5 +286,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
