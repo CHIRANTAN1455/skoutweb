@@ -17,8 +17,8 @@
         body {
             margin: 0;
             font-family: "Georgia", serif;
-            background-color: #fefaf3;
-            color: #222;
+            background-color: #121212; /* Dark background */
+            color: #ddd; /* Light text */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,12 +44,13 @@
             font-size: 3rem;
             margin: 0;
             line-height: 1.2;
+            color: #fff; /* White color for headers */
         }
 
         .content p {
             font-size: 1.2rem;
             margin: 1.5rem 0;
-            color: #555;
+            color: #bbb; /* Light grey for text */
         }
 
         .buttons {
@@ -72,8 +73,8 @@
         }
 
         .btn-secondary {
-            border: 2px solid #222;
-            color: #222;
+            border: 2px solid #ddd; /* Lighter border for dark theme */
+            color: #ddd;
             background-color: transparent;
         }
 
@@ -93,6 +94,7 @@
 
         .popup {
             position: absolute;
+            visibility: hidden;
             bottom: -5%;
             left: 5%;
             background-color: #804bd0;
@@ -189,7 +191,6 @@
             }
         }
 
-        
         .ask.skout {
             margin-top: 2rem;
             background-color: #121212;
@@ -252,8 +253,8 @@
     <div class="container">
        
         <div class="content">
-            <h1>🛠️skout.  偵察兵.</h1>
-            <h1>AI-First Audits.<br>Catered to humans.</h1>
+            <h1>🛠️skout.  偵察兵</h1>
+            <h1>AI-First Audits,<br>Catered to humans.</h1>
             <p>
                 We are your one stop for all your tech code audits, 
                 personalised experiences using AI trained in the art of technologies.
@@ -278,12 +279,12 @@
         
         <div class="image-container">
             <img src="https://github.com/CHIRANTAN1455/skoutweb/blob/main/skout_image.png?raw=true" alt="startup"></img>
-            <div class="popup">
-                <h3>Order #201988</h3>
-                <p>🚀 Processing exchange</p>
-                <p>Your new apps are on the way!</p>
-                <span>POWERED BY skout. AI</span>
-            </div>
+        </div>
+        <div class="popup">
+            <h3>Order #201988</h3>
+            <p>🚀 Processing exchange</p>
+            <p>Your new apps are on the way!</p>
+            <span>POWERED BY skout. AI</span>
         </div>
     </div>
     
